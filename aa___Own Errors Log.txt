@@ -1,0 +1,99 @@
+FERROR
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-4-b62ad9d113e5> in <module>()
+      6 findspark.init()
+      7 import pyspark
+----> 8 sc = pyspark.SparkContext(appName="Daily_Show_Test1")
+      9 
+     10 print sc # Not required - it shall give a diff output each time we initiate a context
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/pyspark/context.pyc in __init__(self, master, appName, sparkHome, pyFiles, environment, batchSize, serializer, conf, gateway, jsc, profiler_cls)
+    110         """
+    111         self._callsite = first_spark_call() or CallSite(None, None, None)
+--> 112         SparkContext._ensure_initialized(self, gateway=gateway)
+    113         try:
+    114             self._do_init(master, appName, sparkHome, pyFiles, environment, batchSize, serializer,
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/pyspark/context.pyc in _ensure_initialized(cls, instance, gateway)
+    257                         " created by %s at %s:%s "
+    258                         % (currentAppName, currentMaster,
+--> 259                             callsite.function, callsite.file, callsite.linenum))
+    260                 else:
+    261                     SparkContext._active_spark_context = instance
+
+ValueError: Cannot run multiple SparkContexts at once; existing SparkContext(app=Daily_Show_Test1, master=local[*]) created by __init__ at <ipython-input-1-f5ca3767befa>:7 
+
+
+########### FERROR
+
+---------------------------------------------------------------------------
+Py4JJavaError                             Traceback (most recent call last)
+<ipython-input-3-c51f9324cf22> in <module>()
+     19 #
+     20 
+---> 21 raw_d.take(15)
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/pyspark/rdd.pyc in take(self, num)
+   1278         """
+   1279         items = []
+-> 1280         totalParts = self.getNumPartitions()
+   1281         partsScanned = 0
+   1282 
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/pyspark/rdd.pyc in getNumPartitions(self)
+    354         2
+    355         """
+--> 356         return self._jrdd.partitions().size()
+    357 
+    358     def filter(self, f):
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/lib/py4j-0.10.3-src.zip/py4j/java_gateway.py in __call__(self, *args)
+   1131         answer = self.gateway_client.send_command(command)
+   1132         return_value = get_return_value(
+-> 1133             answer, self.gateway_client, self.target_id, self.name)
+   1134 
+   1135         for temp_arg in temp_args:
+
+/home/dhankar/spark-2.0.2-bin-hadoop2.7/python/lib/py4j-0.10.3-src.zip/py4j/protocol.py in get_return_value(answer, gateway_client, target_id, name)
+    317                 raise Py4JJavaError(
+    318                     "An error occurred while calling {0}{1}{2}.\n".
+--> 319                     format(target_id, ".", name), value)
+    320             else:
+    321                 raise Py4JError(
+
+Py4JJavaError: An error occurred while calling o23.partitions.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/media/dhankar/Dhankar_1/aa_GIT/pyspark1/dsT1.tsv
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:287)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:229)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:315)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:199)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:248)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:246)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:246)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:35)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:248)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:246)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:246)
+	at org.apache.spark.api.java.JavaRDDLike$class.partitions(JavaRDDLike.scala:60)
+	at org.apache.spark.api.java.AbstractJavaRDDLike.partitions(JavaRDDLike.scala:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:237)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:280)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+########### FERROR
+
+
+
