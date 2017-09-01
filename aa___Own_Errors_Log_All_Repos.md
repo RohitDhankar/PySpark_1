@@ -93,6 +93,89 @@ dhankar@dhankar-VPCEB44EN:~$
 
 #
 
+```
+dhankar@dhankar-VPCEB44EN:~/anaconda2/pkgs/slate-master$ sudo python setup.py install
+running install
+running bdist_egg
+running egg_info
+creating src/slate.egg-info
+writing requirements to src/slate.egg-info/requires.txt
+writing src/slate.egg-info/PKG-INFO
+writing top-level names to src/slate.egg-info/top_level.txt
+writing dependency_links to src/slate.egg-info/dependency_links.txt
+writing manifest file 'src/slate.egg-info/SOURCES.txt'
+reading manifest file 'src/slate.egg-info/SOURCES.txt'
+writing manifest file 'src/slate.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/slate
+copying src/slate/__init__.py -> build/lib.linux-x86_64-2.7/slate
+copying src/slate/conftest.py -> build/lib.linux-x86_64-2.7/slate
+copying src/slate/unittests.py -> build/lib.linux-x86_64-2.7/slate
+copying src/slate/classes.py -> build/lib.linux-x86_64-2.7/slate
+copying src/slate/utils.py -> build/lib.linux-x86_64-2.7/slate
+copying src/slate/test_slate.py -> build/lib.linux-x86_64-2.7/slate
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/__init__.py -> build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/conftest.py -> build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/unittests.py -> build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/classes.py -> build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/utils.py -> build/bdist.linux-x86_64/egg/slate
+copying build/lib.linux-x86_64-2.7/slate/test_slate.py -> build/bdist.linux-x86_64/egg/slate
+byte-compiling build/bdist.linux-x86_64/egg/slate/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/slate/conftest.py to conftest.pyc
+byte-compiling build/bdist.linux-x86_64/egg/slate/unittests.py to unittests.pyc
+byte-compiling build/bdist.linux-x86_64/egg/slate/classes.py to classes.pyc
+byte-compiling build/bdist.linux-x86_64/egg/slate/utils.py to utils.pyc
+byte-compiling build/bdist.linux-x86_64/egg/slate/test_slate.py to test_slate.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/slate.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/slate.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/slate.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/slate.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/slate.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist/slate-0.5.2-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing slate-0.5.2-py2.7.egg
+Copying slate-0.5.2-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding slate 0.5.2 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/slate-0.5.2-py2.7.egg
+Processing dependencies for slate==0.5.2
+Searching for pdfminer
+Reading https://pypi.python.org/simple/pdfminer/
+Best match: pdfminer 20140328
+Downloading https://pypi.python.org/packages/57/4f/e1df0437858188d2d36466a7bb89aa024d252bd0b7e3ba90cbc567c6c0b8/pdfminer-20140328.tar.gz#md5=dfe3eb1b7b7017ab514aad6751a7c2ea
+Processing pdfminer-20140328.tar.gz
+Writing /tmp/easy_install-7XL0vR/pdfminer-20140328/setup.cfg
+Running pdfminer-20140328/setup.py -q bdist_egg --dist-dir /tmp/easy_install-7XL0vR/pdfminer-20140328/egg-dist-tmp-DALVlr
+zip_safe flag not set; analyzing archive contents...
+pdfminer.cmapdb: module references __file__
+creating /usr/local/lib/python2.7/dist-packages/pdfminer-20140328-py2.7.egg
+Extracting pdfminer-20140328-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding pdfminer 20140328 to easy-install.pth file
+Installing pdf2txt.py script to /usr/local/bin
+Installing dumppdf.py script to /usr/local/bin
+Installing latin2ascii.py script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/pdfminer-20140328-py2.7.egg
+Searching for setuptools==20.7.0
+Best match: setuptools 20.7.0
+Adding setuptools 20.7.0 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+
+Using /usr/lib/python2.7/dist-packages
+Finished processing dependencies for slate==0.5.2
+dhankar@dhankar-VPCEB44EN:~/anaconda2/pkgs/slate-master$ 
+
+```
 
 
 #
